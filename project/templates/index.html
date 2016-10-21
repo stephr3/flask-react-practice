@@ -9,13 +9,32 @@
   </head>
   <body>
     <div class="container">
-      <h1>Country Search</h1>
-      <br>
-      <div id="main"></div>
+      <div class="row">
+          <div class="col-sm-6">
+             <h1>Country Search</h1>
+             <br>
+             <div id="main"></div>
+           </div>
+          <div class="col-sm-6">
+            <svg width="720" height="120">
+            <circle cx="40" cy="60" r="10"></circle>
+            <circle cx="80" cy="60" r="10"></circle>
+            <circle cx="120" cy="60" r="10"></circle>
+            </svg>
+            <div id="react-d3"></div>
+          </div>
+      </div>
     </div>
     <!-- scripts -->
     <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/react/react-dom.min.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/js/circles.js') }}"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script>
+      var circle = d3.selectAll("circle");
+      circle.style("fill", "steelblue");
+      circle.attr("r", 30);
+    </script>
   </body>
 </html>
